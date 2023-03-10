@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table border="1">
+    <tr>
+        <td colspan="4"><input id="input_number" type="text"></td>
+    </tr>
+    <tr>
+        <td><button onclick="inputNumber('1')">1</button></td>
+        <td><button onclick="inputNumber('2')">2</button></td>
+        <td><button onclick="inputNumber('3')">3</button></td>
+        <td><button onclick="inputNumber('+')">+</button></td>
+    </tr>
+    <tr>
+        <td><button onclick="inputNumber('4')">4</button></td>
+        <td><button onclick="inputNumber('5')">5</button></td>
+        <td><button onclick="inputNumber('6')">6</button></td>
+        <td><button onclick="inputNumber('-')">-</button></td>
+    </tr>
+    <tr>
+        <td><button onclick="inputNumber('7')">7</button></td>
+        <td><button onclick="inputNumber('8')">8</button></td>
+        <td><button onclick="inputNumber('9')">9</button></td>
+        <td><button onclick="inputNumber('*')">*</button></td>
+    </tr>
+    <tr>
+        <td><button onclick="inputNumber('0')">0</button></td>
+        <td><button onclick="inputNumber('.')">.</button></td>
+        <td><button onclick="inputNumber('/')">/</button></td>
+        <td><button onclick="result()">=</button></td>
+    </tr>
+    <tr>
+        <td><button onclick="sqrtCal()">&radic;</button></td>
+        <td><button onclick="pow()">x<sup>2</sup></button></td>
+        <td></td>
+        <td><button onclick="clearCalculator()">AC</button></td>
+    </tr>
+</table>
+<script>
+    function inputNumber(input) {
+        console.log('inpput ----> ', input)
+        document.getElementById('input_number').value += input;
+
+    }
+    function result() {
+        let input = document.getElementById('input_number').value;
+        let result = eval(input);
+        console.log('result ----> ', result)
+        document.getElementById('input_number').value = result;
+    }
+    function clearCalculator() {
+        document.getElementById('input_number').value = '';
+    }
+    function sqrtCal() {
+        // let sqrt = Math.pow(document.getElementById('input_number').value,0.5);
+        let sqrt = Math.sqrt(document.getElementById('input_number').value);
+        document.getElementById('input_number').value = sqrt;
+    }
+    function pow() {
+        let pows = Math.pow(document.getElementById('input_number').value,2);
+        document.getElementById('input_number').value = pows;
+    }
+
+
+</script>
+</body>
+</html>
